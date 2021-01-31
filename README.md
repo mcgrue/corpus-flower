@@ -1,3 +1,7 @@
+Notes:
+Currently, the tsconfig.json's JSX line will automatically change from "react" to "react-jsx".  This will make cloud9's linter angry.  Just change it back after starting a run or running tests if you don't want to see the red squigglies.  Yes, this is annoying.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
