@@ -137,6 +137,6 @@ describe('search tests ', () => {
   })
 
   test('get all words', () => {
-    expect(corpus.getAllWords()).toBe(inputWords)
+    expect(corpus.getAllWords()).toStrictEqual(inputWords)
   })
 })

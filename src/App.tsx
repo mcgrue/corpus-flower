@@ -81,6 +81,7 @@ class App extends React.Component<AppProps, AppState> {
             rows={rows}
             cols={cols}
             value={this.state.resultText}
+            readOnly
           />
         </header>
       </div>
