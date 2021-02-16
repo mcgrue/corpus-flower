@@ -56,6 +56,8 @@ const AuthStateApp: React.FunctionComponent = () => {
             required: true,
           }
         ]} />
+        
+        FEATURE!
       
     </AmplifyAuthenticator>
   );
