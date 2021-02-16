@@ -2,5 +2,8 @@
   "authSelections": "userPoolOnly",
   "resourceName": "corpusflower40ba7401",
   "serviceType": "imported",
-  "region": "us-east-2"
+  "region": "us-east-2",
+  "userPoolId": "us-east-2_JkpqVGvEf", 
+  "webClientId": "7lp7l7211hj02sabpih1l35q3i", 
+  "nativeClientId":  "5emhad0k08amlr1iek3c58huk1"
 }

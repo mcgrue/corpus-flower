@@ -1,5 +1,5 @@
 import React from 'react';
-import { AmplifyAuthenticator, AmplifySignOut, AmplifySignUp, AmplifySignIn } from '@aws-amplify/ui-react';
+import { AmplifyAuthenticator, AmplifySignOut, AmplifySignUp /*, AmplifySignIn*/ } from '@aws-amplify/ui-react';
 import './App.css';
 import { Amplify /*, Auth*/ } from 'aws-amplify';
 import awsconfig from './aws-exports';
