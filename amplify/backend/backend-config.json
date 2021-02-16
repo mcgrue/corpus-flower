@@ -1,6 +1,6 @@
 {
   "auth": {
-    "corpusflower40ba7401": {
+    "corpusfloweree25608b": {
       "service": "Cognito",
       "serviceType": "imported",
       "providerPlugin": "awscloudformation",

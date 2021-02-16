@@ -13,11 +13,19 @@
     },
     "categories": {
       "auth": {
-        "corpusflower40ba7401": {
+        "corpusfloweree25608b": {
           "userPoolId": "us-east-2_JkpqVGvEf",
           "userPoolName": "corpus-flower-userpool",
           "webClientId": "7lp7l7211hj02sabpih1l35q3i",
-          "nativeClientId": "5emhad0k08amlr1iek3c58huk1"
+          "nativeClientId": "5emhad0k08amlr1iek3c58huk1",
+          "identityPoolId": "us-east-2:6f9b26cb-fae5-4bc2-b181-14da4e913176",
+          "identityPoolName": "corpusflower_identity_pool",
+          "allowUnauthenticatedIdentities": false,
+          "authRoleArn": "arn:aws:iam::118589564318:role/Cognito_corpusflower_identity_poolAuth_Role",
+          "authRoleName": "Cognito_corpusflower_identity_poolAuth_Role",
+          "unauthRoleArn": "arn:aws:iam::118589564318:role/Cognito_corpusflower_identity_poolUnauth_Role",
+          "unauthRoleName": "Cognito_corpusflower_identity_poolUnauth_Role",
+          "googleClientId": "890151091839-vn62g60e5fsh3d93c8j4d9e6esiru9so.apps.googleusercontent.com"
         }
       }
     }
