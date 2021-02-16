@@ -1,93 +1,65 @@
-import React, { MouseEvent } from 'react';
+import React from 'react';
+import { AmplifyAuthenticator, AmplifySignOut, AmplifySignUp, AmplifySignIn } from '@aws-amplify/ui-react';
 import './App.css';
+import { Amplify /*, Auth*/ } from 'aws-amplify';
+import awsconfig from './aws-exports';
+// import { CognitoUser } from '@aws-amplify/auth'
 
-// import {AppProps} from './types';
-import { Corpus } from './trie/Corpus';
+import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 
-const dict = new Corpus(false);
+Amplify.configure(awsconfig);
 
-type AppProps = {};
-type AppState = { resultText: string; inputText: string, searchInput: string };
+const federated = {
+  googleClientId: "890151091839-vn62g60e5fsh3d93c8j4d9e6esiru9so"
+};
 
-class App extends React.Component<AppProps, AppState> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      resultText: '(Results go here.)',
-      inputText: 'Foo\nBar\nBaz\nBat\nBun1',
-      searchInput: '',
-    };
+// type AwsUser = {
+//   attributes: {};
+// };
+
+const AuthStateApp: React.FunctionComponent = () => {
+  const [authState, setAuthState] = React.useState<AuthState>();
+  const [user, setUser] = React.useState<object | undefined>();
+
+  React.useEffect(() => {
+      onAuthUIStateChange((nextAuthState, authData) => {
+          debugger;
+          setAuthState(nextAuthState);
+          setUser(authData);
+      });
+  }, []);
+  
+  if( authState === AuthState.SignedIn && user ) {
+    return(
+        <div className="App">
+            <div>Hello, {user ? JSON.stringify(user) : 'None'}!</div>
+            <AmplifySignOut />
+        </div>
+      );
   }
-
-  handleLoadCorpus() {
-    const tmp = this.state.inputText.split('\n');
-
-    tmp.forEach( (word) => {
-      word = word.trim()
+  
+  return (
+    <AmplifyAuthenticator federated={federated} usernameAlias="email"> 
+      <AmplifySignUp
+        slot="sign-up"
+        usernameAlias="email"
+        formFields={[
+          {
+            type: "email",
+            label: "Email",
+            placeholder: "",
+            required: true,
+          },
+          {
+            type: "password",
+            label: "Password",
+            placeholder: "",
+            required: true,
+          }
+        ]} />
       
-      if(word.length > 0) {
-        dict.addWord(word);
-      } 
-    } );
-    
-    this.setState((state, props) => ({ resultText: dict.getAllWords().join('\n') }));
-  }
-
-  handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    console.log('this is:', this);
-    
-    event.preventDefault();
-
-    this.handleLoadCorpus();
-  }
-  
-  updateLoadText = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    this.setState({inputText: event.currentTarget.value});
-  }
-  
-  onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({searchInput: event.currentTarget.value});
-  }
-  
-  doSearch = (event: MouseEvent<HTMLButtonElement>) => {
-    
-    const searchWord = this.state.searchInput;
-    const isWord = dict.isWord(searchWord);
-    const childWords = dict.getBroadWords(searchWord, 10);
-    
-    alert( `Is word? ${isWord}\n\nautocompletes? ${childWords}` );
-  }
-
-  render() {
-
-    const searchInput = this.state.searchInput || '';
-
-    const rows = 10;
-    const cols = 80;
-
-    return (
-      <div className="App">
-        <header className="App-header">
-          <textarea value={this.state.inputText} onChange={this.updateLoadText} rows={rows} cols={cols} />
-          <button onClick={this.handleClick}>Load</button>
-          <br />
-          <br />
-          <input value={searchInput} onChange={this.onSearchChange} />
-          <button onClick={this.doSearch}>Search</button>
-          <br />
-          <br />
-          <textarea
-            id="results"
-            rows={rows}
-            cols={cols}
-            value={this.state.resultText}
-            readOnly
-          />
-        </header>
-      </div>
-    );
-  }
+    </AmplifyAuthenticator>
+  );
 }
 
-
-export default App;
+export default AuthStateApp;

@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-corpusflower-dev-11337-authRole",
+      "UnauthRoleArn": "arn:aws:iam::118589564318:role/amplify-corpusflower-dev-11337-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::118589564318:role/amplify-corpusflower-dev-11337-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-corpusflower-dev-11337-deployment",
+      "UnauthRoleName": "amplify-corpusflower-dev-11337-unauthRole",
+      "StackName": "amplify-corpusflower-dev-11337",
+      "StackId": "arn:aws:cloudformation:us-east-2:118589564318:stack/amplify-corpusflower-dev-11337/33ce17e0-6ff4-11eb-af6f-0699d46f8e66",
+      "AmplifyAppId": "d565thf3g6cw1"
+    },
+    "categories": {
+      "auth": {
+        "corpusflower40ba7401": {
+          "userPoolId": "us-east-2_JkpqVGvEf",
+          "userPoolName": "corpus-flower-userpool",
+          "webClientId": "7lp7l7211hj02sabpih1l35q3i",
+          "nativeClientId": "5emhad0k08amlr1iek3c58huk1"
+        }
+      }
+    }
+  }
+}
