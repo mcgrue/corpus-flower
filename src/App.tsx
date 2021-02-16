@@ -23,7 +23,6 @@ const AuthStateApp: React.FunctionComponent = () => {
 
   React.useEffect(() => {
       onAuthUIStateChange((nextAuthState, authData) => {
-          debugger;
           setAuthState(nextAuthState);
           setUser(authData);
       });
