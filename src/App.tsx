@@ -7,17 +7,29 @@ import awsconfig from './aws-exports';
 
 let config:any = awsconfig;
 
+if(!config.auth) {
+  config.auth = {};
+}
+
 if(!config.userPoolId) {
   config.userPoolId = config.aws_user_pools_id;
+  config.auth.userPoolId = config.aws_user_pools_id;
 }
 
 if(!config.identityPoolId) {
   config.identityPoolId = config.aws_cognito_identity_pool_id;
+  config.auth.identityPoolId = config.aws_cognito_identity_pool_id;
 }
 
+console.log("KHAN", config);
+
 Amplify.configure(config);
-debugger;
+
+console.log("FIG", config);
+
 Auth.configure(config);
+
+console.log("KAHNFIG", config);
 
 const federated = {
   googleClientId: "890151091839-vn62g60e5fsh3d93c8j4d9e6esiru9so"
