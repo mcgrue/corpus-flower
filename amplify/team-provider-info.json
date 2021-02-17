@@ -1,19 +1,19 @@
 {
-  "devthree": {
+  "devfour": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-corpusflower3-devthree-05934-authRole",
-      "UnauthRoleArn": "arn:aws:iam::118589564318:role/amplify-corpusflower3-devthree-05934-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::118589564318:role/amplify-corpusflower3-devthree-05934-authRole",
+      "AuthRoleName": "amplify-corpusflower4-devfour-30544-authRole",
+      "UnauthRoleArn": "arn:aws:iam::118589564318:role/amplify-corpusflower4-devfour-30544-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::118589564318:role/amplify-corpusflower4-devfour-30544-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-corpusflower3-devthree-05934-deployment",
-      "UnauthRoleName": "amplify-corpusflower3-devthree-05934-unauthRole",
-      "StackName": "amplify-corpusflower3-devthree-05934",
-      "StackId": "arn:aws:cloudformation:us-east-2:118589564318:stack/amplify-corpusflower3-devthree-05934/67777790-70bb-11eb-99e9-02d9600aa3f6",
-      "AmplifyAppId": "d2zfe3tumsriit"
+      "DeploymentBucketName": "amplify-corpusflower4-devfour-30544-deployment",
+      "UnauthRoleName": "amplify-corpusflower4-devfour-30544-unauthRole",
+      "StackName": "amplify-corpusflower4-devfour-30544",
+      "StackId": "arn:aws:cloudformation:us-east-2:118589564318:stack/amplify-corpusflower4-devfour-30544/0817dbc0-70cd-11eb-8532-0600f1d4ce0c",
+      "AmplifyAppId": "dhjntxqginohl"
     },
     "categories": {
       "auth": {
-        "friendlyname11235": {
+        "corpus4AuthService": {
           "googleClientId": "890151091839-vn62g60e5fsh3d93c8j4d9e6esiru9so.apps.googleusercontent.com"
         }
       }

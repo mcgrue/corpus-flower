@@ -21,18 +21,18 @@ let config:any = awsconfig;
 //   config.auth.identityPoolId = config.aws_cognito_identity_pool_id;
 // }
 
-const authPatch = { 
-  Auth: { 
-    identityPoolId: 'us-east-2:c3588282-d951-4126-89a9-35667fd3e7b2', 
-    region: 'us-east-2', 
-    userPoolId: 'us-east-2_YYT7qhEtw', 
-    userPoolWebClientId: '3mfj8c2pf4i13utmlog2324tbr' 
-  } 
-}
+// const authPatch = { 
+//   Auth: { 
+//     identityPoolId: 'us-east-2:c3588282-d951-4126-89a9-35667fd3e7b2', 
+//     region: 'us-east-2', 
+//     userPoolId: 'us-east-2_YYT7qhEtw', 
+//     userPoolWebClientId: '3mfj8c2pf4i13utmlog2324tbr' 
+//   } 
+// }
 
 Amplify.configure(config);
-Amplify.configure(authPatch);
-Auth.configure(authPatch);
+// Amplify.configure(authPatch);
+Auth.configure(config);
 
 const federated = {
   googleClientId: "890151091839-vn62g60e5fsh3d93c8j4d9e6esiru9so"

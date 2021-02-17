@@ -1,22 +1,6 @@
 {
   "auth": {
-    "userPoolGroups": {
-      "service": "Cognito-UserPool-Groups",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "auth",
-          "resourceName": "friendlyname11235",
-          "attributes": [
-            "UserPoolId",
-            "AppClientIDWeb",
-            "AppClientID",
-            "IdentityPoolId"
-          ]
-        }
-      ]
-    },
-    "friendlyname11235": {
+    "corpus4AuthService": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
