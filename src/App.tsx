@@ -1,13 +1,23 @@
 import React from 'react';
-import { AmplifyAuthenticator, AmplifySignOut, AmplifySignUp /*, AmplifySignIn*/ } from '@aws-amplify/ui-react';
 import './App.css';
-import { Amplify /*, Auth*/ } from 'aws-amplify';
-import awsconfig from './aws-exports';
-// import { CognitoUser } from '@aws-amplify/auth'
-
+import { AmplifyAuthenticator, AmplifySignOut, AmplifySignUp /*, AmplifySignIn*/ } from '@aws-amplify/ui-react';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
 
-Amplify.configure(awsconfig);
+let config:any = awsconfig;
+
+if(!config.userPoolId) {
+  config.userPoolId = config.aws_user_pools_id;
+}
+
+if(!config.identityPoolId) {
+  config.identityPoolId = config.aws_cognito_identity_pool_id;
+}
+
+Amplify.configure(config);
+debugger;
+Auth.configure(config);
 
 const federated = {
   googleClientId: "890151091839-vn62g60e5fsh3d93c8j4d9e6esiru9so"
