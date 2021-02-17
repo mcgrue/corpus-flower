@@ -7,29 +7,32 @@ import awsconfig from './aws-exports';
 
 let config:any = awsconfig;
 
-if(!config.auth) {
-  config.auth = {};
-}
+// if(!config.auth) {
+//   config.auth = {};
+// }
 
-if(!config.userPoolId) {
-  config.userPoolId = config.aws_user_pools_id;
-  config.auth.userPoolId = config.aws_user_pools_id;
-}
+// if(!config.userPoolId) {
+//   config.userPoolId = config.aws_user_pools_id;
+//   config.auth.userPoolId = config.aws_user_pools_id;
+// }
 
-if(!config.identityPoolId) {
-  config.identityPoolId = config.aws_cognito_identity_pool_id;
-  config.auth.identityPoolId = config.aws_cognito_identity_pool_id;
-}
+// if(!config.identityPoolId) {
+//   config.identityPoolId = config.aws_cognito_identity_pool_id;
+//   config.auth.identityPoolId = config.aws_cognito_identity_pool_id;
+// }
 
-console.log("KHAN", config);
+const authPatch = { 
+  Auth: { 
+    identityPoolId: 'us-east-2:c3588282-d951-4126-89a9-35667fd3e7b2', 
+    region: 'us-east-2', 
+    userPoolId: 'us-east-2_YYT7qhEtw', 
+    userPoolWebClientId: '3mfj8c2pf4i13utmlog2324tbr' 
+  } 
+}
 
 Amplify.configure(config);
-
-console.log("FIG", config);
-
-Auth.configure(config);
-
-console.log("KAHNFIG", config);
+Amplify.configure(authPatch);
+Auth.configure(authPatch);
 
 const federated = {
   googleClientId: "890151091839-vn62g60e5fsh3d93c8j4d9e6esiru9so"
